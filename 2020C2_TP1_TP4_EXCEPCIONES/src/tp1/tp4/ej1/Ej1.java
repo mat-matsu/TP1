@@ -11,28 +11,28 @@ public class Ej1 {
 		// Probamos el error de carga con Integer.ParseInt
 		int numero = 0;
 		System.out.println("valor de la variable numero1: " + numero);
-//		try {
+		try {
 			System.out.print("Ingrese un numero: ");
 			numero = Integer.parseInt(input.nextLine());
-//		} catch (NumberFormatException e) {
-//			System.out.println("Error. Se produjo un error en la carga: " + e.getMessage());
-//		} finally {
-//			System.out.println("Ahora la variable numero1 vale: " + numero);
-//		}
+		} catch (NumberFormatException e) {
+			System.out.println("Error. Se produjo un error en la carga: " + e.getMessage());
+		} finally {
+			System.out.println("Ahora la variable numero1 vale: " + numero);
+		}
 		System.out.println("\n*************************\n");
 
 		// volvemos a probar, pero usando nextInt (genera otra excepcion)
 		numero = 0;
-//		try {
+		try {
 			System.out.println("valor de la variable numero2: " + numero);
 			System.out.print("Ingrese un numero: ");
 			numero = input.nextInt();
-//		} catch (InputMismatchException e) {
-//			System.out.println("Error. Se produjo un error en la carga.");
-//		} finally {
-//			input.nextLine();
-//			System.out.println("Ahora la variable numero2 vale: " + numero);
-//		}
+		} catch (InputMismatchException e) {
+			System.out.println("Error. Se produjo un error en la carga.");
+		} finally {
+			input.nextLine();
+			System.out.println("Ahora la variable numero2 vale: " + numero);
+		}
 
 		// Ahora probamos de encapsular esta funcionalidad para capturar un
 		// numero sin errores de carga por tipo de dato inadecuado.
@@ -58,13 +58,13 @@ public class Ej1 {
 		int numero = 0;
 		boolean ok = false;
 		while (!ok) {
-//			try {
+			try {
 				System.out.print("Ingrese numero entero: ");
 				numero = Integer.parseInt(input.nextLine());
 				ok = true;
-//			} catch (NumberFormatException e) {
-//				System.out.println("Error. Ingrese un numero correcto");
-//			}
+			} catch (NumberFormatException e) {
+				System.out.println("Error. Ingrese un numero correcto");
+			}
 		}
 		return numero;
 	}
